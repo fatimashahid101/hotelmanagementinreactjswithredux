@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react'
+import AppRouter from './config/router/index';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Provider } from 'react-redux';
+import store from './config/redux/store/index';
+import {auth,onAuthStateChanged} from './config/firebaseconfig/index'
+import { getData,changeUserAuth } from './config/redux/action/index';
+
 
 function App() {
+
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#1a1b3a'
+      },
+      secondary: {
+        main: '#fff'
+      },
+      info:{
+        main:'#c5a880'
+      }
+    },
+    typography: {
+      // fontFamily: 'Quicksand'
+      fontFamily: 'Montserrat'
+    }
+
+  })
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+          <AppRouter/>
+        </Provider>
+      </ThemeProvider>
     </div>
   );
 }

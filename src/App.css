@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  /* --primary:#003F63; */
+  --primary:#1a1b3a;
+  --secondary:#c5a880;
+  --lightGray:#999999;
+  --headingFont:'Old Standard TT', serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+body{
+  /* background-color: #A9D0D9 !important; */
+  /* background-color: #1a1b3a !important; */
+  /* background-image: url('https://preview.colorlib.com/theme/unwind/images/xbg_1.jpg.pagespeed.ic.OPAhN-pmOO.webp'); */
+  /* background-image: url('https://images.unsplash.com/photo-1534612899740-55c821a90129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); */
+  /* background-image: url('https://images.unsplash.com/photo-1582533568805-78a15dcb01b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2079&q=80'); */
+  background-image: url('https://images.unsplash.com/photo-1544473243-e8b609021dbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed
 
-.App-header {
-  background-color: #282c34;
+  
+}
+.content{
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
-.App-link {
-  color: #61dafb;
+
+.productCard{
+  transition: box-shadow 250ms linear;
+  background-color: rgba(246, 246, 246, 0.37);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.productCard:hover{
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.664);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cardImage{
+  max-width: 450px;
+  max-height:350px;
+  overflow: hidden;
+}
+
+
+.editProfileInput:focus{
+  outline-color:var(--secondary);
+}
+
+.editProfileInput{
+  outline-color:#dbdbdb;
+}
+
+.SelectOption{
+  border-color: #dbdbdb;
+  border-radius: 5px;
+  color: var(--lightGray);
+  /* outline-color: var(--secondary); */
+}
+.SelectOption:focus{
+  border-color: var(--secondary);
+  outline-color: var(--secondary);
 }
